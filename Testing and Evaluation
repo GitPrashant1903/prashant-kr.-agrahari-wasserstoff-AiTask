@@ -1,0 +1,16 @@
+import unittest
+
+class TestRAGChatbot(unittest.TestCase):
+    def test_rag_generate_response(self):
+        user_query = 'What is the capital of France?'
+        response = rag_generate_response(user_query)
+        self.assertIsNotNone(response)
+
+    def test_process_query_with_chain_of_thought(self):
+        user_query = 'What is the capital of France?'
+        previous_context = 'France is a country in Europe.'
+        response = process_query_with_chain_of_thought(user_query, previous_context)
+        self.assertIsNotNone(response)
+
+if __name__ == '__main__':
+    unittest.main()
